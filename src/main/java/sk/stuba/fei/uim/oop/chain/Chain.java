@@ -36,6 +36,7 @@ public class Chain {
     public void setRadius(int radius) {
         this.radius = radius;
         this.updateChainShapeRadius();
+        this.updateChain();
     }
 
     public void setSpacing(int spacing) {
