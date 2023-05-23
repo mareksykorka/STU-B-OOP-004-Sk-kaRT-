@@ -1,6 +1,5 @@
 package sk.stuba.fei.uim.oop.logic;
 
-import sk.stuba.fei.uim.oop.chain.shapes.Shape;
 import sk.stuba.fei.uim.oop.chain.shapes.ShapeTypes;
 
 public class AppDefs {

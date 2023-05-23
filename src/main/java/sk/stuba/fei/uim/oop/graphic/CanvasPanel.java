@@ -2,9 +2,10 @@ package sk.stuba.fei.uim.oop.graphic;
 
 import sk.stuba.fei.uim.oop.chain.Chain;
 
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
+
 
 public class CanvasPanel extends JPanel {
     private Chain chain;
