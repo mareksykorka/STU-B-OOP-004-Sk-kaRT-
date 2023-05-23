@@ -1,11 +1,12 @@
 package sk.stuba.fei.uim.oop.logic;
 
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.awt.event.*;
 
-public class UniversalAdapter implements MouseListener, MouseMotionListener {
+public class UniversalAdapter implements MouseListener, MouseMotionListener, ChangeListener, ItemListener {
     @Override
     public void mouseClicked(MouseEvent e) {
 
@@ -38,6 +39,16 @@ public class UniversalAdapter implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
+
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+
+    }
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
 
     }
 }
