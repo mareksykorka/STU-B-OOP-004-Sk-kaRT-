@@ -1,16 +1,21 @@
 package sk.stuba.fei.uim.oop.graphic;
 
+import sk.stuba.fei.uim.oop.chain.Chain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class CanvasPanel extends JPanel {
-    public CanvasPanel() {
+    private Chain chain;
+    public CanvasPanel(Chain chain) {
+        this.chain = chain;
     }
 
     @Override
     public void paint(Graphics g) {
+        super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.fill(new Rectangle2D.Double(1,1,100,100));
+        this.chain.draw(g2D);
     }
 }

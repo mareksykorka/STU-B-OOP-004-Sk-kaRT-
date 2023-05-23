@@ -2,6 +2,7 @@ package sk.stuba.fei.uim.oop.graphic;
 
 import lombok.Getter;
 import sk.stuba.fei.uim.oop.chain.shapes.ShapeTypes;
+import sk.stuba.fei.uim.oop.logic.AppDefs;
 import sk.stuba.fei.uim.oop.logic.Logic;
 
 import javax.swing.*;
@@ -53,7 +54,7 @@ public class MenuPanel extends JPanel {
         gbc.gridy = 1;
         gbc.weighty = 1.0f;
         gbc.insets = new Insets(0,5,0,5);
-        this.sliderLength = new JSlider(SwingConstants.VERTICAL, 20, 200, 50);
+        this.sliderLength = new JSlider(SwingConstants.VERTICAL, 20, 200, AppDefs.DEF_LENGTH);
         this.sliderLength.setMajorTickSpacing(10);
         this.sliderLength.setMinorTickSpacing(10);
         this.sliderLength.setSnapToTicks(true);
@@ -64,7 +65,7 @@ public class MenuPanel extends JPanel {
         this.add(this.sliderLength, gbc);
 
         gbc.gridx = 1;
-        this.sliderRadius = new JSlider(SwingConstants.VERTICAL, 1, 20, 5);
+        this.sliderRadius = new JSlider(SwingConstants.VERTICAL, 1, 20, AppDefs.DEF_RADIUS);
         this.sliderRadius.setMajorTickSpacing(1);
         this.sliderRadius.setMinorTickSpacing(1);
         this.sliderRadius.setSnapToTicks(true);
@@ -75,7 +76,7 @@ public class MenuPanel extends JPanel {
         this.add(this.sliderRadius, gbc);
 
         gbc.gridx = 2;
-        this.sliderSpacing = new JSlider(SwingConstants.VERTICAL, 1, 20, 5);
+        this.sliderSpacing = new JSlider(SwingConstants.VERTICAL, 1, 20, AppDefs.DEF_SPACING);
         this.sliderSpacing.setMajorTickSpacing(1);
         this.sliderSpacing.setMinorTickSpacing(1);
         this.sliderSpacing.setSnapToTicks(true);
@@ -93,7 +94,7 @@ public class MenuPanel extends JPanel {
         gbc.insets = new Insets(5,5,5,5);
         Vector<ShapeTypes> cBoxOptions = new Vector<>(List.of(ShapeTypes.values()));
         this.stylesComboBox = new JComboBox<>(cBoxOptions);
-        this.stylesComboBox.setSelectedIndex(0);
+        this.stylesComboBox.setSelectedItem(AppDefs.DEF_SHAPE);
         this.stylesComboBox.setFocusable(false);
         this.stylesComboBox.addItemListener(logic);
         this.add(this.stylesComboBox, gbc);
