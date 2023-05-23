@@ -29,7 +29,7 @@ public class ChainLink {
     }
 
     public void createShape(ShapeTypes shapeType, int radius, Color color) {
-        switch(shapeType){
+        switch (shapeType) {
             case CIRCLE:
                 this.shape = new Circle(this.center, radius, color);
                 break;
@@ -50,7 +50,7 @@ public class ChainLink {
     }
 
 
-    public void draw(Graphics2D g2D) {
+    public void drawChainLink(Graphics2D g2D) {
         g2D.setColor(Color.BLACK);
         g2D.fill(new Ellipse2D.Double(this.center.x - 2, this.center.y - 2, 4, 4));
         if (this.connectingLine != null) {
@@ -58,7 +58,7 @@ public class ChainLink {
         }
     }
 
-    public void drawShape(Graphics2D g2D){
+    public void drawShape(Graphics2D g2D) {
         if (this.shape != null) {
             this.shape.draw(g2D);
         }

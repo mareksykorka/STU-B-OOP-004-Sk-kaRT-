@@ -2,7 +2,6 @@ package sk.stuba.fei.uim.oop.graphic;
 
 import sk.stuba.fei.uim.oop.chain.Chain;
 
-
 import javax.swing.*;
 import java.awt.*;
 

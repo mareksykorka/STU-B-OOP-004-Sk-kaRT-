@@ -29,13 +29,13 @@ public class MenuPanel extends JPanel {
 
     public MenuPanel(Logic logic) {
         this.setLayout(new GridBagLayout());
-        this.setBorder(new LineBorder(Color.DARK_GRAY,1));
+        this.setBorder(new LineBorder(Color.DARK_GRAY, 1));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(5,5,5,5);
+        gbc.insets = new Insets(5, 5, 5, 5);
         this.labelLength = new JLabel("Length");
         this.labelLength.setHorizontalAlignment(SwingConstants.CENTER);
         this.add(this.labelLength, gbc);
@@ -53,7 +53,7 @@ public class MenuPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.weighty = 1.0f;
-        gbc.insets = new Insets(0,5,0,5);
+        gbc.insets = new Insets(0, 5, 0, 5);
         this.sliderLength = new JSlider(SwingConstants.VERTICAL, 20, 200, AppDefs.DEF_LENGTH);
         this.sliderLength.setMajorTickSpacing(10);
         this.sliderLength.setMinorTickSpacing(10);
@@ -91,7 +91,7 @@ public class MenuPanel extends JPanel {
         gbc.gridwidth = 3;
         gbc.weightx = 1.0f;
         gbc.weighty = 0.0f;
-        gbc.insets = new Insets(5,5,5,5);
+        gbc.insets = new Insets(5, 5, 5, 5);
         Vector<ShapeTypes> cBoxOptions = new Vector<>(List.of(ShapeTypes.values()));
         this.stylesComboBox = new JComboBox<>(cBoxOptions);
         this.stylesComboBox.setSelectedItem(AppDefs.DEF_SHAPE);

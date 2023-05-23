@@ -3,7 +3,7 @@ package sk.stuba.fei.uim.oop.chain.shapes;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
-public class Square extends AppShape{
+public class Square extends AppShape {
     public Square(Point center, int radius, Color color) {
         super(center, radius, color);
     }

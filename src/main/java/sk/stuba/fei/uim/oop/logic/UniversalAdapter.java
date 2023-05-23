@@ -3,7 +3,6 @@ package sk.stuba.fei.uim.oop.logic;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.*;
 
 public class UniversalAdapter implements MouseListener, MouseMotionListener, ChangeListener, ItemListener {

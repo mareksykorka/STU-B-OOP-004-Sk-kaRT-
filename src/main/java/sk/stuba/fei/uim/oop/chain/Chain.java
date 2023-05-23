@@ -1,12 +1,14 @@
 package sk.stuba.fei.uim.oop.chain;
 
 import lombok.Getter;
-import sk.stuba.fei.uim.oop.chain.shapes.*;
+import sk.stuba.fei.uim.oop.chain.shapes.AppShape;
+import sk.stuba.fei.uim.oop.chain.shapes.ShapeTypes;
 import sk.stuba.fei.uim.oop.logic.AppDefs;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Chain {
     @Getter
@@ -82,30 +84,27 @@ public class Chain {
         }
 
         int numberOfShapes = 0;
-        for (int i = this.chainLinks.size()-1; i >= 0; i-=this.spacing) {
+        for (int i = this.chainLinks.size() - 1; i >= 0; i -= this.spacing) {
             this.chainLinks.get(i).createShape(this.shapeType, this.radius, Color.RED);
             numberOfShapes++;
         }
         this.chainLinks.get(0).createShape(this.shapeType, this.radius, Color.RED);
 
-        float colorStep = 255/(float)numberOfShapes;
+        float colorStep = 255 / (float) numberOfShapes;
         float absoluteColorStep = 0;
-        for (int i = this.chainLinks.size()-1; i >= 0; i-=this.spacing) {
-            this.chainLinks.get(i).getShape().setColor(new Color((int)(255-absoluteColorStep),0,(int)(0+absoluteColorStep)));
-            absoluteColorStep+=colorStep;
+        for (int i = this.chainLinks.size() - 1; i >= 0; i -= this.spacing) {
+            this.chainLinks.get(i).getShape().setColor(new Color((int) (255 - absoluteColorStep), 0, (int) (0 + absoluteColorStep)));
+            absoluteColorStep += colorStep;
         }
-        this.chainLinks.get(0).getShape().setColor(new Color((int)(255-absoluteColorStep),0,(int)(0+absoluteColorStep)));
-
-
+        this.chainLinks.get(0).getShape().setColor(new Color((int) (255 - absoluteColorStep), 0, (int) (0 + absoluteColorStep)));
     }
 
-
     public void draw(Graphics2D g2D) {
-        for (int i = 0; i < this.chainLinks.size(); i++) {
-            this.chainLinks.get(i).draw(g2D);
+        for (ChainLink chainLink : this.chainLinks) {
+            chainLink.drawChainLink(g2D);
         }
-        for (int i = 0; i < this.chainLinks.size(); i++) {
-            this.chainLinks.get(i).drawShape(g2D);
+        for (ChainLink chainLink : this.chainLinks) {
+            chainLink.drawShape(g2D);
         }
     }
 }
