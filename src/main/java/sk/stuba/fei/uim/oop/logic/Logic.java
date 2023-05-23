@@ -65,21 +65,18 @@ public class Logic extends UniversalAdapter {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        super.mouseEntered(e);
         this.chain.addChainLink(e.getPoint());
         this.mainWindow.repaint();
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        super.mouseDragged(e);
         this.chain.addChainLink(e.getPoint());
         this.mainWindow.repaint();
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        super.mouseMoved(e);
         this.chain.addChainLink(e.getPoint());
         this.mainWindow.repaint();
     }

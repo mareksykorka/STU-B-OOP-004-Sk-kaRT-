@@ -36,7 +36,6 @@ public class Chain {
     public void setRadius(int radius) {
         this.radius = radius;
         this.updateChainShapeRadius();
-        this.updateChain();
     }
 
     public void setSpacing(int spacing) {
@@ -45,7 +44,6 @@ public class Chain {
     }
 
     public void setShapeTypes(ShapeTypes shapeType) {
-        System.out.println(shapeType);
         this.shapeType = shapeType;
         this.updateChain();
     }
@@ -81,18 +79,31 @@ public class Chain {
         for (ChainLink cl : this.chainLinks) {
             cl.removeShape();
         }
+
+        int numberOfShapes = 0;
         for (int i = this.chainLinks.size()-1; i >= 0; i-=this.spacing) {
             this.chainLinks.get(i).createShape(this.shapeType, this.radius, Color.RED);
+            numberOfShapes++;
         }
         this.chainLinks.get(0).createShape(this.shapeType, this.radius, Color.RED);
+
+        float colorStep = 255/(float)numberOfShapes;
+        float absoluteColorStep = 0;
+        for (int i = this.chainLinks.size()-1; i >= 0; i-=this.spacing) {
+            this.chainLinks.get(i).getShape().setColor(new Color((int)(255-absoluteColorStep),0,(int)(0+absoluteColorStep)));
+            absoluteColorStep+=colorStep;
+        }
+        this.chainLinks.get(0).getShape().setColor(new Color((int)(255-absoluteColorStep),0,(int)(0+absoluteColorStep)));
+
+
     }
 
 
     public void draw(Graphics2D g2D) {
-        for (int i = this.chainLinks.size() - 1; i >= 0; i--) {
+        for (int i = 0; i < this.chainLinks.size(); i++) {
             this.chainLinks.get(i).draw(g2D);
         }
-        for (int i = this.chainLinks.size() - 1; i >= 0; i--) {
+        for (int i = 0; i < this.chainLinks.size(); i++) {
             this.chainLinks.get(i).drawShape(g2D);
         }
     }
